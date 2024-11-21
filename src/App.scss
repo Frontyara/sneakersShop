@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+TC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap');
+
+//////////////////////////////////////////////////////////////
+
+@mixin chinaF-color-size-weight-line($a, $b, $c, $d) {
+  font-family: "Noto Sans TC", sans-serif;
+  color: $a;
+  font-size: $b;
+  font-weight: $c;
+  line-height: $d;
+}
+
+/////////////////////////////////////////////////////////////
+
+.nav {
+  width: 100vw;
+  height: 64px;
+  background-color: #484283;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+
+  @media (max-width:1360px) {
+    height: 100px;
+  }
+
+  @media (max-width:1020px) {
+    height: 64px;
+  }
+
+  .content {
+    width: min(1180px, 61.458vw);
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff;
+
+    @media (max-width: 1730px) {
+      width: 80vw;
+    }
+
+    @media (max-width:1360px) {
+      flex-direction: column;
+      justify-content: space-around;
+
+
+      @media (max-width:1020px) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .logo {
+          z-index: 10000;
+        }
+
+        .item__cart {
+          z-index: 10000;
+        }
+
+        .item {
+          display: none;
+        }
+
+        .item__burger {
+          width: 25px;
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-left: 20px;
+          position: relative;
+          z-index: 10000;
+
+          .line {
+            width: inherit;
+            height: 2.2px;
+            border-radius: 2px;
+            background-color: #ffffff;
+          }
+        }
+
+      }
+    }
+
+    @media (max-width:530px) {
+      width: 90vw;
+    }
+
+    .logo {
+      @include chinaF-color-size-weight-line(#ffffff, 30px, 700, 30px);
+
+      @media (max-width:530px) {
+        font-size: 20px;
+      }
+    }
+
+    .item-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 1020px) {
+        flex-direction: row-reverse;
+      }
+
+      .item__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+          @include chinaF-color-size-weight-line(#ffffff, 14px, 400, 14px);
+          margin-right: 40px;
+        }
+      }
+
+      .item__cart {
+        @include chinaF-color-size-weight-line(#ffffff, 14px, 400, 14px);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          margin-right: 10px;
+        }
+
+        .cart__img {
+          img {
+            width: inherit;
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  background-color: #484283;
+  width: 100vw;
+  height: 464px;
+
+  .content {
+    width: min(1180px, 61.458vw);
+    height: inherit;
+    margin: 0 auto;
+    position: relative;
+
+    @media (max-width: 1730px) {
+      width: 80vw;
+    }
+
+    .backLogo {
+      text-align: center;
+      position: absolute;
+      bottom: 108px;
+      right: 55px;
+      z-index: 0;
+
+      @media (max-width:1020px) {
+        span {
+          @include chinaF-color-size-weight-line(#ffffff, 200px, 700, 200px);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width:635px) {
+        transform: rotate(45deg) translate(0px, -100px);
+      }
+
+      @media (max-width:456px) {
+        transform: rotate(60deg) translate(-30px, -140px);
+      }
+
+      span {
+        @include chinaF-color-size-weight-line(#ffffff, 200px, 700, 200px);
+        opacity: 0.12;
+
+        @media (max-width:1020px) {
+          @include chinaF-color-size-weight-line(#ffffff, 150px, 700, 150px);
+          opacity: 0.12;
+        }
+
+        @media (max-width:800px) {
+          @include chinaF-color-size-weight-line(#ffffff, 100px, 700, 100px);
+        }
+      }
+    }
+
+    .buttonArea {
+      max-width: 580px;
+      position: absolute;
+      margin: 100px 0px 100px 0px;
+      z-index: 1;
+
+      @media (max-width: 540px) {
+        margin-top: 60px;
+        width: 80vw;
+      }
+
+      @media (max-width:425px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .title {
+        @include chinaF-color-size-weight-line(#ffffff, 36px, 400, 50.4px);
+
+        @media (max-width: 540px) {
+          @include chinaF-color-size-weight-line(#ffffff, 27px, 400, 29px);
+          width: 80vw;
+        }
+
+        @media (max-width:425px) {
+          text-align: center;
+        }
+
+        @media (max-width:373px) {
+          @include chinaF-color-size-weight-line(#ffffff, 23px, 400, 23px);
+        }
+      }
+
+      .text {
+        @include chinaF-color-size-weight-line(#ffffff, 16px, 300, 22.4px);
+        margin: 20px 0px 40px 0px;
+        width: 480px;
+
+        @media (max-width: 540px) {
+          @include chinaF-color-size-weight-line(#ffffff, 12px, 300, 18.4px);
+          width: 80vw;
+        }
+      }
+
+      .button {
+        @include chinaF-color-size-weight-line(#ffffff, 16px, 400, 16px);
+        padding: 22px 47px;
+        background-color: #F14F4F;
+
+        @media (max-width:540px) {
+          padding: 20px 35px;
+          max-width: 230px;
+        }
+      }
+    }
+  }
+}
+
+.burger__active {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: #484283;
+  transition: 0.3s linear;
+  overflow-y: scroll;
+
+  .item__active {
+    @include chinaF-color-size-weight-line(#ffffff, 16px, 400, 16px);
+    padding: 20px 30px;
+    border: 1px solid white;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    transition: 0.3s linear;
+
+    &:first-child {
+      margin-top: 64px;
+    }
+  }
+}
